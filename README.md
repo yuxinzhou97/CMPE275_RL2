@@ -1,8 +1,13 @@
 # CMPE275_RL2
 
+```
+python3.8 -m pip install cython
+```
+
 pybind11 is already loaded in this repo, run
 
 ```
+python3 cython_setup.py build_ext -inplace
 python3 pybind_setup.py build_ext -i
 python3 test_funcs.py
 ```
