@@ -6,7 +6,7 @@ from timeit import default_timer as timer
 
 
 def test_modify_matrix():
-    for i in range(100000):
+    for i in range(1000000):
         A = [1, 2, 3, 4, 5, 6, 7]
         B = pybind_wrap.modify(A)
     print(B)
