@@ -8,7 +8,7 @@ from Cython.Build import cythonize
 extensions = [Extension('cython_funcs', ["cython_funcs.pyx"])]
 
 setup(
-    name='Hello world app',
+    name='Cython test',
     ext_modules=cythonize(extensions),
     zip_safe=False,
 )
