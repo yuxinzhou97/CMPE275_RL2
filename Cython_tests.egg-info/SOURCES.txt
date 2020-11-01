@@ -1,8 +1,7 @@
 README.md
-cython_funcs.c
 cython_read_write.c
 cython_setup.py
-readtest.c
+cython_vector_modify.c
 Cython_tests.egg-info/PKG-INFO
 Cython_tests.egg-info/SOURCES.txt
 Cython_tests.egg-info/dependency_links.txt

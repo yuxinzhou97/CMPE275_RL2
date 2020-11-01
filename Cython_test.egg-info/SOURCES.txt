@@ -1,9 +1,0 @@
-README.md
-cython_funcs.c
-cython_setup.py
-test.c
-Cython_test.egg-info/PKG-INFO
-Cython_test.egg-info/SOURCES.txt
-Cython_test.egg-info/dependency_links.txt
-Cython_test.egg-info/not-zip-safe
-Cython_test.egg-info/top_level.txt

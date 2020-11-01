@@ -5,7 +5,7 @@ from setuptools import setup, Extension
 from Cython.Build import cythonize
 # dist.Distribution().fetch_build_eggs(['cython'])
 
-extensions = [Extension('cython_funcs', ["cython_funcs.pyx"]),
+extensions = [Extension('cython_vector_modify', ["cython_vector_modify.pyx"]),
 Extension('cython_read_write', ["cython_read_write.pyx"])]
 
 setup(

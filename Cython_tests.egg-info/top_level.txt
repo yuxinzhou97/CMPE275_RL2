@@ -1,2 +1,2 @@
-cython_funcs
 cython_read_write
+cython_vector_modify
