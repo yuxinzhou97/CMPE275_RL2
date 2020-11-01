@@ -1084,9 +1084,8 @@ static PyObject *__pyx_tuple_;
 static PyObject *__pyx_codeobj__2;
 /* Late includes */
 
-/* "cython_funcs.pyx":4
- * #     return name
- * 
+/* "cython_funcs.pyx":2
+ * # works with language_level=3,3str
  * def cython_modify(list):             # <<<<<<<<<<<<<<
  *     cdef int i = 0
  *     cdef int value = 0
@@ -1120,8 +1119,8 @@ static PyObject *__pyx_pf_12cython_funcs_cython_modify(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("cython_modify", 0);
 
-  /* "cython_funcs.pyx":5
- * 
+  /* "cython_funcs.pyx":3
+ * # works with language_level=3,3str
  * def cython_modify(list):
  *     cdef int i = 0             # <<<<<<<<<<<<<<
  *     cdef int value = 0
@@ -1129,7 +1128,7 @@ static PyObject *__pyx_pf_12cython_funcs_cython_modify(CYTHON_UNUSED PyObject *_
  */
   __pyx_v_i = 0;
 
-  /* "cython_funcs.pyx":6
+  /* "cython_funcs.pyx":4
  * def cython_modify(list):
  *     cdef int i = 0
  *     cdef int value = 0             # <<<<<<<<<<<<<<
@@ -1138,7 +1137,7 @@ static PyObject *__pyx_pf_12cython_funcs_cython_modify(CYTHON_UNUSED PyObject *_
  */
   __pyx_v_value = 0;
 
-  /* "cython_funcs.pyx":7
+  /* "cython_funcs.pyx":5
  *     cdef int i = 0
  *     cdef int value = 0
  *     while i < len(list):             # <<<<<<<<<<<<<<
@@ -1146,57 +1145,59 @@ static PyObject *__pyx_pf_12cython_funcs_cython_modify(CYTHON_UNUSED PyObject *_
  *         list[i] = 2 * value
  */
   while (1) {
-    __pyx_t_1 = PyObject_Length(__pyx_v_list); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 7, __pyx_L1_error)
+    __pyx_t_1 = PyObject_Length(__pyx_v_list); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 5, __pyx_L1_error)
     __pyx_t_2 = ((__pyx_v_i < __pyx_t_1) != 0);
     if (!__pyx_t_2) break;
 
-    /* "cython_funcs.pyx":8
+    /* "cython_funcs.pyx":6
  *     cdef int value = 0
  *     while i < len(list):
  *         value = list[i]             # <<<<<<<<<<<<<<
  *         list[i] = 2 * value
  *         i += 1
  */
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_list, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_list, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 6, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 6, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_value = __pyx_t_4;
 
-    /* "cython_funcs.pyx":9
+    /* "cython_funcs.pyx":7
  *     while i < len(list):
  *         value = list[i]
  *         list[i] = 2 * value             # <<<<<<<<<<<<<<
  *         i += 1
  *     return list
  */
-    __pyx_t_3 = __Pyx_PyInt_From_long((2 * __pyx_v_value)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_long((2 * __pyx_v_value)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(__Pyx_SetItemInt(__pyx_v_list, __pyx_v_i, __pyx_t_3, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(0, 9, __pyx_L1_error)
+    if (unlikely(__Pyx_SetItemInt(__pyx_v_list, __pyx_v_i, __pyx_t_3, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(0, 7, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "cython_funcs.pyx":10
+    /* "cython_funcs.pyx":8
  *         value = list[i]
  *         list[i] = 2 * value
  *         i += 1             # <<<<<<<<<<<<<<
  *     return list
+ * 
  */
     __pyx_v_i = (__pyx_v_i + 1);
   }
 
-  /* "cython_funcs.pyx":11
+  /* "cython_funcs.pyx":9
  *         list[i] = 2 * value
  *         i += 1
  *     return list             # <<<<<<<<<<<<<<
+ * 
+ * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_list);
   __pyx_r = __pyx_v_list;
   goto __pyx_L0;
 
-  /* "cython_funcs.pyx":4
- * #     return name
- * 
+  /* "cython_funcs.pyx":2
+ * # works with language_level=3,3str
  * def cython_modify(list):             # <<<<<<<<<<<<<<
  *     cdef int i = 0
  *     cdef int value = 0
@@ -1279,17 +1280,16 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "cython_funcs.pyx":4
- * #     return name
- * 
+  /* "cython_funcs.pyx":2
+ * # works with language_level=3,3str
  * def cython_modify(list):             # <<<<<<<<<<<<<<
  *     cdef int i = 0
  *     cdef int value = 0
  */
-  __pyx_tuple_ = PyTuple_Pack(3, __pyx_n_s_list, __pyx_n_s_i, __pyx_n_s_value); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(3, __pyx_n_s_list, __pyx_n_s_i, __pyx_n_s_value); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
-  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cython_funcs_pyx, __pyx_n_s_cython_modify, 4, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cython_funcs_pyx, __pyx_n_s_cython_modify, 2, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -1570,22 +1570,21 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "cython_funcs.pyx":4
- * #     return name
- * 
+  /* "cython_funcs.pyx":2
+ * # works with language_level=3,3str
  * def cython_modify(list):             # <<<<<<<<<<<<<<
  *     cdef int i = 0
  *     cdef int value = 0
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_12cython_funcs_1cython_modify, NULL, __pyx_n_s_cython_funcs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_12cython_funcs_1cython_modify, NULL, __pyx_n_s_cython_funcs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cython_modify, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cython_modify, __pyx_t_1) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "cython_funcs.pyx":1
- * # def say_hello_to(name):             # <<<<<<<<<<<<<<
- * #     return name
- * 
+ * # works with language_level=3,3str             # <<<<<<<<<<<<<<
+ * def cython_modify(list):
+ *     cdef int i = 0
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
