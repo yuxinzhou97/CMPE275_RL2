@@ -27,3 +27,6 @@ cd build
 cmake ..
 make check -j 4
 ```
+
+test1 cython -> cython_read_write.pyx
+test1 python -> original_funcs.py
