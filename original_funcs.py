@@ -5,3 +5,14 @@ def original_matrix_modify(list):
         list[i] = 2 * value
         i += 1
     return list
+
+def original_simple_add(a, b):
+    return a + b
+
+def original_simple_mul(a, b):
+    return a * b
+
+def original_matrix_modify_add(list):
+    pass
+
+    
