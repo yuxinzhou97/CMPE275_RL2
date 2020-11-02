@@ -4,6 +4,11 @@
 python3.8 -m pip install cython
 ```
 
+To download this repo with submodule pybind11
+```
+git clone --recursive https://github.com/yuxinzhou97/CMPE275_RL2
+```
+
 pybind11 is already loaded in this repo, run
 
 ```
@@ -14,7 +19,7 @@ python3 pybind_setup.py build_ext -i
 python3 test_funcs.py
 ```
 
-if you want to configure the pybind11 by yourself, cd into the directory, then install pybind11 as a submodule
+if you want to configure pybind11 by yourself, cd into the directory, then install pybind11 as a submodule
 
 ```
 git submodule add ../../pybind/pybind11 extern/pybind11 -b stable
