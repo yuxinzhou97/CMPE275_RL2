@@ -7,7 +7,8 @@ from Cython.Build import cythonize
 
 extensions = [Extension('cython_vector_modify', ["cython_vector_modify.pyx"]),
 Extension('cython_read_write', ["cython_read_write.pyx"]),
-Extension('cython_iteration', ["cython_iteration.pyx"]) ]
+Extension('cython_iteration', ["cython_iteration.pyx"]),
+Extension('cython_recursion', ["cython_recursion.pyx"])]
 
 
 

@@ -1,6 +1,7 @@
 README.md
 cython_iteration.c
 cython_read_write.c
+cython_recursion.c
 cython_setup.py
 cython_vector_modify.c
 Cython_tests.egg-info/PKG-INFO

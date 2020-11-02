@@ -1,13 +1,15 @@
 # # Cython Compilation for Developers¶
 # import pyximport
 # pyximport.install()
-
+import sys
 import pybind_wrap
 import original_funcs
 from timeit import default_timer as timer
 import cython_read_write as cython_read_write
 import cython_vector_modify as cython_vector_modify
 import cython_iteration as cython_iteration
+import cython_recursion as cython_recursion
+sys.setrecursionlimit(1500)
 
 def test_pybind_modify(list, times):
     for i in range(times):
@@ -60,7 +62,7 @@ if __name__ == '__main__':
     print()
 
     # Test 2: modify vector
-    listA = create_list(1000000)
+    listA = create_list(1000)
     start = timer()
     test_original_modify(listA, 1)
     end = timer()
@@ -82,8 +84,9 @@ if __name__ == '__main__':
     print()
 
     # Test 3: iteration test, calculate power(a, b) by iteration
+    # a > 0, b is integer, assume never out of range
     a = 0.99
-    b = 100000
+    b = 1500
     start = timer()
     result = original_funcs.power_by_iteration(a, b)
     # print(result)
@@ -106,3 +109,27 @@ if __name__ == '__main__':
     print("pybind11 time: " + str(time_in_ms) + " ms")
     print()
 
+    # Test 4: recursion test, calculate power(a, b) by recursion
+    # a > 0, b is integer, assume never out of range
+    a = 0.99
+    b = 1500
+    start = timer()
+    result = original_funcs.power_by_recursion(a, b)
+    # print(result)
+    end = timer()
+    time_in_ms = (end - start) * 1000
+    print("python time: " + str(time_in_ms) + " ms")
+
+    start = timer()
+    result = cython_recursion.power_by_recursion(a, b)
+    # print(result)
+    end = timer()
+    time_in_ms = (end - start) * 1000
+    print("cython time: " + str(time_in_ms) + " ms")
+
+    start = timer()
+    result = pybind_wrap.power_by_recursion(a, b)
+    # print(result)
+    end = timer()
+    time_in_ms = (end - start) * 1000
+    print("pybind11 time: " + str(time_in_ms) + " ms")
