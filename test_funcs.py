@@ -1,58 +1,38 @@
-# Cython Compilation for Developers¶
-import pyximport
-pyximport.install()
+# # Cython Compilation for Developers¶
+# import pyximport
+# pyximport.install()
 
 import pybind_wrap
 import original_funcs
 from timeit import default_timer as timer
-import cython_vector_modify as cython_vector_modify
 import cython_read_write as cython_read_write
-# import cppimport
-# funcs = cppimport.imp("wrap")
-# https: // norvig.com/ngrams/
+import cython_vector_modify as cython_vector_modify
 
 
-
-def test_pybind_modify():
-    for i in range(100):
-        A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        B = pybind_wrap.modify(A)
-    print(B)
+def test_pybind_modify(list, times):
+    for i in range(times):
+        result = pybind_wrap.modify(list)
+    # print(result)
 
 
-def test_cython_modify():
-    for i in range(100):
-        A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        B = cython_vector_modify.cython_vector_modify(A)
-    print(B)
+def test_cython_modify(list, times):
+    for i in range(times):
+        result = cython_vector_modify.cython_vector_modify(list)
+    # print(result)
 
 
-def test_original_modify():
-    for i in range(100):
-        A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        B = original_funcs.original_matrix_modify(A)
-    print(B)
+def test_original_modify(list, times):
+    for i in range(times):
+        result = original_funcs.original_matrix_modify(list)
+    # print(result)
 
+def create_list(count):
+    list = []
+    for i in range(count):
+        list.append(i)
+    return list
 
 if __name__ == '__main__':
-
-    start = timer()
-    test_original_modify()
-    end = timer()
-    print("python time: " + str(end - start))
-
-    start = timer()
-    test_cython_modify()
-    end = timer()
-    print("Cython time: " + str(end - start))
-
-
-    start = timer()
-    test_pybind_modify()
-    end = timer()
-    print("pybind11 time: " + str(end - start))
-
-
     # Test 1: read and write test
     start = timer()
     input_path = 'sherlock_holmes.txt'
@@ -74,3 +54,21 @@ if __name__ == '__main__':
     pybind_wrap.pybind_read_write(input_path, output_path)
     end = timer()
     print("Pybind read and write time: " + str(end - start))
+
+    # Test 2: modify vector
+    listA = create_list(1000000)
+    start = timer()
+    test_original_modify(listA, 1)
+    end = timer()
+    print("python time: " + str(end - start))
+
+    start = timer()
+    test_cython_modify(listA, 1)
+    end = timer()
+    print("Cython time: " + str(end - start))
+
+
+    start = timer()
+    test_pybind_modify(listA, 1)
+    end = timer()
+    print("pybind11 time: " + str(end - start))

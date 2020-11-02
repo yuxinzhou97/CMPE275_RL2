@@ -2,7 +2,7 @@
 #include <pybind11/stl.h>
 #include <vector>
 using namespace std;
-
+namespace py = pybind11;
 vector<int> modify(vector<int> &input)
 {
     vector<int> result(input.size());

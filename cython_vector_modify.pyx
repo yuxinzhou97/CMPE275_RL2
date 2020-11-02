@@ -1,5 +1,5 @@
 # works with language_level=3,3str
-def cython_vector_modify(list):
+cpdef cython_vector_modify(list):
     cdef int i = 0
     cdef int value = 0
     while i < len(list):

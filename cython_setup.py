@@ -6,7 +6,8 @@ from Cython.Build import cythonize
 # dist.Distribution().fetch_build_eggs(['cython'])
 
 extensions = [Extension('cython_vector_modify', ["cython_vector_modify.pyx"]),
-Extension('cython_read_write', ["cython_read_write.pyx"])]
+Extension('cython_read_write', ["cython_read_write.pyx"]) ]
+# extensions = [Extension('cython_funcs', ["cython_funcs.pyx"])]
 
 setup(
     name='Cython tests',
